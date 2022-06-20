@@ -5,4 +5,7 @@ from django.shortcuts import HttpResponse
 
 
 def login(request):
+    if request.method == "POST":
+        email = request.POST.get('loginEmail')
+        password = request.POST.get('loginPassword')
     return render(request, 'login.html')
